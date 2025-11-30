@@ -37,7 +37,7 @@ root {
 }
 
 .logo img {
-    height: 100px;
+    height: 50px;
     width: 50px;
 }
 
@@ -69,6 +69,8 @@ root {
     color: #c19b4a;
 }
 
+
+
 .menu-btn {
     display: none;
     font-size: 28px;
@@ -76,90 +78,6 @@ root {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 850px) {
-    .nav-links {
-        position: absolute;
-        top: 75px;
-        right: -100%;
-        background: white;
-        flex-direction: column;
-        width: 200px;
-        padding: 20px;
-        gap: 20px;
-        transition: 0.4s;
-        border-left: 1px solid #ddd;
-        box-shadow: -3px 0 10px rgba(0,0,0,0.05);
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .icons {
-        display: none;
-    }
-}
-
-body {
-    font-family: Arial, sans-serif; /* Use actual font from image */
-}
-
-/* Utility Container */
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- Header/Navbar Styling --- */
-
-.navbar {
-    padding: 20px 0;
-    background-color: white;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--heading-color);
-  
-}
-
-.logo img {
-    height: 30px; /* Adjust as needed */
-    margin-right: 5px;
-}
-
-.nav-links ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
 
 .nav-h{
     margin-left: 25px;
@@ -171,14 +89,35 @@ body {
     /* font-size: 20px; */
     /* In a real project, these would use icon fonts like Font Awesome */
 }
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 600px) {
+    .icons {
+        gap: 15px;       /* gap kam */
+    }
 
+    .icons i {
+        font-size: 18px; /* icons thode chhote */
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .icons {
+        gap: 10px;
+    }
+
+    .icons i {
+        font-size: 16px;
+    }
+
+    }
 /* --- Hero Section Styling --- */
 
 .hero-section {
     position: relative;
     width: 100%;
     height: 75vh; /* Adjust height as needed */
-    background-image: url(./background.jpg); /* Actual background image */
+    background-image: url(./images/background.jpg); /* Actual background image */
     background-size: cover;
     background-position: center;
     display: flex; /* To help position the content box */
@@ -187,8 +126,9 @@ body {
     padding-right: 100px; /* Space from the right edge */
 }
 
-.hero-content-box {
-    background-color: var(--light-bg-color); 
+.hero-content-box { 
+    background-color: #111;
+    background-color: var(--light-bg-color);  
     padding: 50px;
     max-width: 500px;
     border: 3px solid #9A77AF; /* The purple border */
@@ -197,17 +137,20 @@ body {
     margin: 10px;
     margin-top: 80px;
     top: 20px;
+
     
 }
 
 .new-arrival {
+    
     font-size: 16px;
     letter-spacing: 3px;
     margin-bottom: 5px;
-    margin: 20px;
+    margin: 5px;
 }
 
 .hero-content-box h1 {
+
     font-size: 55px;
     color: var(--primary-color);
     line-height: 1.1;
@@ -225,7 +168,7 @@ body {
     display: inline-block;
     padding: 20px 50px;
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -237,6 +180,103 @@ body {
 .buy-now-btn:hover {
     background-color: #a37b29;
 }
+/* ---------------- MOBILE & TABLET (max-width: 768px) ---------------- */
+@media (max-width: 768px) {
+
+    /* -------- Navbar -------- */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 0;
+        transition: 0.3s ease;
+        border-top: 1px solid #eee;
+    }
+
+    /* Show menu when active class is added */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .logo img {
+        height: 60px;
+        width: 30px;
+    }
+
+    /* -------- Hero Section -------- */
+    .hero-section {
+        height: auto;
+        padding: 40px 20px;
+        justify-content: center; 
+        background-position: center;
+    }
+
+    .hero-content-box {
+        position: static;
+        max-width: 100%;
+        padding: 30px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .hero-content-box h1 {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .buy-now-btn {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+}
+
+/* ---------------- SMALL PHONES (max-width: 480px) ---------------- */
+@media (max-width: 480px) {
+
+    .hero-content-box {
+        padding: 25px;
+    }
+
+    .hero-content-box h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .new-arrival {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .buy-now-btn {
+        padding: 12px 35px;
+        font-size: 14px;
+    }
+}
+
 .range-section {
     padding: 80px 20px;
     text-align: center;
@@ -293,7 +333,7 @@ body {
 
 /* Optional Hover Effect */
 .category-image:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .category-title {
@@ -658,7 +698,8 @@ body {
 .carousel-next-arrow:hover {
     background-color: #f0f0f0;
 }
-/* --- Share Your Setup Section --- */
+
+
 .share-setup-section {
     padding: 80px 0;
     text-align: center;
@@ -770,15 +811,70 @@ body {
 /* For simplicity, if it's meant to be partially behind, its position needs careful consideration */
 /* Based on the screenshot, it looks like it might be positioned slightly off-grid or is just a sliver */
 /* For a direct visual match as a full item, this would be: */
-.item-brick-dining {
-    grid-column: 7 / span 3; /* Assuming it starts after item-kitchen-shelf if it's a new row */
+.item-brick-dining {   grid-column: 7 / span 3; /* Assuming it starts after item-kitchen-shelf if it's a new row */
     grid-row: 3 / span 1;
-    height: 295px;
-}
+    height: 295px;}
+ 
+
 /* Note: The brick dining image's position relative to item-kitchen-shelf is tricky. */
 /* The screenshot shows it overlapping slightly, which might be achieved with negative margins or different grid setup/absolute positioning. */
 /* The above places it cleanly. If you need the overlap, it's more complex CSS. */
 /* --- Footer Styling --- */
+/* ---------------- MOBILE SCREENS (max-width: 768px) ---------------- */
+@media (max-width: 768px) {
+
+    .photo-gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 12px;
+    }
+
+    /* हर image को auto-height पर रखेंगे और manual height हटाएँगे */
+    .grid-item {
+        height: auto !important;
+    }
+
+    .grid-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* अब सभी items को simple stacked layout देंगे */
+
+    .item-tall,
+    .item-wide,
+    .item-medium,
+    .item-tall-right,
+    .item-chair,
+    .item-small,
+    .item-kitchen-shelf,
+    .item-brick-dining,
+    .item-small-frame {
+        grid-column: span 2 !important; /* full width */
+        grid-row: auto !important;
+    }
+}
+
+/* ---------------- Very Small Screens (max-width: 480px) ---------------- */
+@media (max-width: 480px) {
+
+    .photo-gallery-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .item-tall,
+    .item-wide,
+    .item-medium,
+    .item-tall-right,
+    .item-chair,
+    .item-small,
+    .item-kitchen-shelf,
+    .item-brick-dining,
+    .item-small-frame {
+        grid-column: span 1 !important; /* single column */
+    }
+}
+
 .main-footer {
     background-color: white; /* Assuming white background */
     padding-top: 40px;
@@ -913,121 +1009,185 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-/* موبائل فونز: اسکرین کی چوڑائی 600px یا اس سے کم */
-@media only screen and (max-width: 600px) {
-  .navbar {
-    padding: 10px 20px;
-  }
+/* =======================================
+      📱 FULL MOBILE RESPONSIVE DESIGN
+      Applies to screen width <= 576px
+=========================================*/
+@media (max-width: 576px) {
 
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    right: -100%; /* پہلے hide کرنا */
-  }
+    body {
+        overflow-x: hidden;
+    }
 
-  .menu-btn {
-    display: block;
-  }
+    /* ---------------- NAVBAR ---------------- */
+    header.navbar {
+        padding: 10px 15px;
+    }
 
-  .icons {
-    display: none;
-  }
+    .logo img {
+        width: 35px;
+    }
 
-  .hero-content-box {
-    padding: 20px;
-    right: 20px;
-    top: 20px;
-    max-width: calc(100% - 40px);
-  }
+    .logo span {
+        font-size: 1.2rem;
+    }
 
-  .hero-content-box h1 {
-    font-size: 32px;
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        text-align: center;
+        padding: 15px 0;
+        gap: 15px;
+        z-index: 999;
+    }
 
-  .buy-now-btn {
-    padding: 12px 32px;
-    font-size: 16px;
-  }
+    .nav-links.active {
+        display: flex;
+    }
 
-  .category-cards {
-    flex-direction: column;
-    gap: 20px;
-  }
+    .icons {
+        display: none;
+    }
 
-  .product-grid {
-    grid-template-columns: 1fr; /* ایک کالم پر آؤٹ پٹ کریں */
-    gap: 20px;
-  }
+    .menu-btn {
+        display: block;
+        font-size: 1.8rem;
+    }
 
-  .product-card {
-    margin: 0 auto;
-    max-width: 90%;
-  }
+    /* ---------------- HERO SECTION ---------------- */
+    .hero-section {
+        padding: 20px;
+    }
 
-  .inspiration-carousel {
-    height: auto;
-    flex-direction: column;
-    padding-right: 20px;
-  }
+    .hero-image-container {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
 
-  .carousel-item {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+    .hero-content-box {
+        padding: 20px;
+        width: 100%;
+    }
 
-  .carousel-next-arrow {
-    right: 10px;
-    bottom: 10px;
-    position: absolute;
-  }
+    .hero-content-box h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
 
-  .photo-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .hero-content-box .description {
+        font-size: 0.9rem;
+    }
 
-  .item-tall, .item-wide, .item-medium, .item-tall-right, .item-chair, .item-small, .item-kitchen-shelf, .item-small-frame, .item-brick-dining {
-    /* موبائل پر سبھی images کو adjust کریں */
-    grid-column: span 2;
-    height: auto;
-  }
+    .buy-now-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
 
-  .main-footer .container {
-    flex-direction: column;
-    gap: 20px;
-  }
+    /* ---------------- RANGE SECTION ---------------- */
+    .range-section {
+        text-align: center;
+        padding: 30px 10px;
+    }
 
-  .newsletter-signup {
-    flex-direction: column;
-  }
+    .category-cards {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
 
-  .subscribe-btn {
-    margin-top: 10px;
-  }
-}
+    .category-card {
+        width: 100%;
+    }
 
+    /* ---------------- PRODUCTS SECTION ---------------- */
+    .products-section {
+        padding: 20px 10px;
+    }
 
-/* تھوڑا بڑا فون / چھوٹا ٹیبلٹ: 601px سے 900px تک */
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* دو کالم */
-  }
+    .product-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+    }
 
-  .hero-content-box {
-    max-width: 70%;
-    padding: 30px;
-  }
+    .product-card img {
+        width: 100%;
+        height: auto;
+    }
 
-  .hero-content-box h1 {
-    font-size: 45px;
-  }
+    .product-info h3 {
+        font-size: 1.1rem;
+    }
 
-  .buy-now-btn {
-    padding: 16px 40px;
-    font-size: 17px;
-  }
+    .current-price {
+        font-size: 1rem;
+    }
 
-  .photo-gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    /* ---------------- ROOMS INSPIRATION ---------------- */
+    .rooms-inspiration-section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .inspiration-content {
+        margin-bottom: 20px;
+    }
+
+    .inspiration-carousel {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ---------------- SHARE SETUP SECTION ---------------- */
+    .photo-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .photo-gallery-grid img {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-tall,
+    .item-wide,
+    .item-medium,
+    .item-small,
+    .item-brick-dining {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    .main-footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .newsletter-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-btn {
+        width: 100%;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+    }
 }
